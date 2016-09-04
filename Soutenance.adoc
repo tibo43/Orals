@@ -1,0 +1,142 @@
+= Evolution de la Plateforme de Supervision et Optimisation du Réseau: Mémoire de Stage de Fin d'Etudes
+Thibaut Fabre
+:revealjs_theme: default
+#:revealjs_customtheme: <file|URL>
+:revealjs_controls: true
+:revealjs_progress: true
+:revealjs_slideNumber: true
+:revealjs_center: true
+
+
+== Supervision
+
+Technique industrielle visant à :
+
+* *_surveiller_ le bon fonctionnement* d’un système
+* à *_alerter_ les éventuelles pannes*
+
+Principes :
+
+* Récupérer l'utilisation des ressources sur les environnements surveillés
+* Analyser chaque valeur récupérée
+* Alerter les responsables de l'infrastructure en cas de dysfonctionnement repéré
+** Quantité de RAM libre insuffisante
+** Récupération d'un mot clef dans un fichier de log
+
+
+== Sommaire
+
+[%step]
+* Contexte
+* Zabbix
+* Ansible
+
+== Contexte
+
+=== SQLI Group
+
+* ESN française fondé en 1990
+* Spécialisé dans la transformation digitale
+* Chiffre d'affaire 2015:
+* Plus de 2000 collaborateurs en Europe et en Afrique du nord.
+
+=== ISC France
+
+* _Innovative Services Center_
+* Entité situé à Bordeaux et à Nantes
+* plus de 200 collaborateurs à Bordeaux et 50 à Nantes
+
+=== Pôle CRCI
+
+* _Centre de Ressources et de Compétences Informatiques_
+* Responsable de l’infrastructure système et réseau, de la gestion du parc informatique et fourni une assistance technique
+* Equipe de 3 collaborateurs:
+** responsable : Arnaud Roudsovsky
+** 2 ingénieurs : Frédéric Gracia et Romain Ballan
+* Collaboration avec le _Pôle Expertise_ pour *DevOps*
+
+=== DevOps
+
+Mouvance agile visant à accélerer la création et le débogue d'application
+
+* Culture : changer l’organisation en silos par une organisation plate et collaborative.
+* Automation -automatisation- : rendre autonome le déploiement des environnements de travail et de production.
+* Lean : fluidifier et optimiser l’organisation et les modes d’interactions entre les différents acteurs.
+* Measurement -mesure- : mettre en place des indicateurs de performances adéquats et partagés par tous les métiers.
+* Sharing -solidarité- : accroitre la communication et la collaboration entre les métiers.
+
+Outils émergeant : *Docker*, *Jenkins*
+
+
+=== Infras
+
+Infrastructure hétérogène:
+* VMWare: Hyperviseur propriétaire
+* Openstack: Solution OpenSource pour du cloud computing
+
+*Cloud computing* :
+Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur
+
+Avoir une vue d'ensemble de l'infrastructure est primordiale: +
+Mettre à jour la plateforme de *supervision*
+
+== Zabbix
+
+=== Présentation
+
+Ensemble d'outil assurant la supervision d'une infrastructure
+* Open source et large communauté
+* Web scénario
+* _Service Level Agreement_
+* Equipe déjà formée
+* Possibilité de monitorer container *Docker*
+
+=== Architecture et fonctionnement
+
+- image architecture
+- image fonctionnement
+
+=== Mise en place
+
+* Choix optimal des triggers
+* Solutions pour superviser container *Docker*
+- image fonctionnement
+
+=== Apport + limite
+
+|===
+|Apports:
+|Supervision des containers, Configuration de scénarios web.
+
+|Limites:
+|Manque de précision sur certaines alertes, la base de données, pas de sauvegarde
+|===
+
+
+== Ansible
+
+=== Pourquoi en avoir besoin ?
+
+Logiciel open source permettant la configuration et la gestion à distance des machines
+Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts
+
+Utilisation indispensable pour mettre à jour les agents déjà présents
+
+=== Apport + limite
+
+|===
+|Apports:
+|Gain de temps, Utilisation pour effectuer des montés de version de masse.
+
+|Limites:
+|Fonctionnement sous Windows instable,
+|===
+
+== Conclusion
+
+* Zabbix apporte un nouveau plus dans la gestion de l'infrastructure
+* Ansible aidera dans l'avenir les ingénieurs du pôlegal
+
+* Equipes innovantes et dynamiques
+* Apprentissage du métier d'ingénieur Réseaux et Système
+* Travailler dans la culture DevOps
