@@ -1,6 +1,6 @@
 = Evolution de la Plateforme de Supervision et Optimisation du Réseau: Mémoire de Stage de Fin d'Etudes
 Thibaut Fabre
-:revealjs_theme: default
+:revealjs_theme: solarized
 #:revealjs_customtheme: <file|URL>
 :revealjs_controls: true
 :revealjs_progress: true
@@ -59,11 +59,11 @@ Principes :
 
 Mouvance agile visant à accélerer la création et le débogue d'application
 
-* Culture : changer l’organisation en silos par une organisation plate et collaborative.
-* Automation -automatisation- : rendre autonome le déploiement des environnements de travail et de production.
-* Lean : fluidifier et optimiser l’organisation et les modes d’interactions entre les différents acteurs.
-* Measurement -mesure- : mettre en place des indicateurs de performances adéquats et partagés par tous les métiers.
-* Sharing -solidarité- : accroitre la communication et la collaboration entre les métiers.
+* Culture
+* Automation (automatisation)
+* Lean
+* Measurement (mesure)
+* Sharing (solidarité)
 
 Outils émergeant : *Docker*, *Jenkins*
 
@@ -71,6 +71,7 @@ Outils émergeant : *Docker*, *Jenkins*
 === Infras
 
 Infrastructure hétérogène:
+
 * VMWare: Hyperviseur propriétaire
 * Openstack: Solution OpenSource pour du cloud computing
 
@@ -84,7 +85,8 @@ Mettre à jour la plateforme de *supervision*
 
 === Présentation
 
-Ensemble d'outil assurant la supervision d'une infrastructure
+Ensemble d'outil assurant la supervision d'une infrastructure:
+
 * Open source et large communauté
 * Web scénario
 * _Service Level Agreement_
@@ -118,6 +120,7 @@ Ensemble d'outil assurant la supervision d'une infrastructure
 === Pourquoi en avoir besoin ?
 
 Logiciel open source permettant la configuration et la gestion à distance des machines
+
 Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts
 
 Utilisation indispensable pour mettre à jour les agents déjà présents
