@@ -1,6 +1,6 @@
 = Evolution de la Plateforme de Supervision et Optimisation du Réseau
 Thibaut Fabre
-:revealjs_theme: solarized
+:revealjs_theme: league
 #:revealjs_customtheme: <file|URL>
 :revealjs_controls: true
 :revealjs_progress: true
@@ -10,23 +10,19 @@ Thibaut Fabre
 
 == Supervision
 
-Technique industrielle visant à :
-
-* *_surveiller_ le bon fonctionnement* d’un système
+[cols="1a",frame=none,grid=none]
+|===
+|* *_surveiller_ le bon fonctionnement* d’un système
 * à *_alerter_ les éventuelles pannes*
 
-Principes :
-
+|Principes::
 * Récupérer l'utilisation des ressources sur les environnements surveillés
 * Analyser chaque valeur récupérée
 * Alerter les responsables de l'infrastructure en cas de dysfonctionnement repéré
-** Quantité de RAM libre insuffisante
-** Récupération d'un mot clef dans un fichier de log
-
+|===
 
 == Sommaire
 
-[%step]
 * Contexte
 * Zabbix
 * Ansible
@@ -44,20 +40,23 @@ Principes :
 
 * _Innovative Services Center_
 * Entité situé à Bordeaux et à Nantes
-* plus de 200 collaborateurs à Bordeaux et 50 à Nantes
+* Plus de 200 collaborateurs à Bordeaux et 50 à Nantes
 
 === Pôle CRCI
 
-* _Centre de Ressources et de Compétences Informatiques_
+[cols="1a",frame=none,grid=none]
+|===
+|* _Centre de Ressources et de Compétences Informatiques_
 * Responsable de l’infrastructure système et réseau, de la gestion du parc informatique et fourni une assistance technique
-* Equipe de 3 collaborateurs:
-** responsable : Arnaud Roudsovsky
-** 2 ingénieurs : Frédéric Gracia et Romain Ballan
-* Collaboration avec le _Pôle Expertise_ pour *DevOps*
+
+|Equipe de 3 collaborateurs::
+* responsable : Arnaud Roudsovsky
+* 2 ingénieurs : Frédéric Gracia et Romain Ballan
+
+^|Collaboration avec le _Pôle Expertise_ pour *DevOps*
+|===
 
 === DevOps
-
-Mouvance agile visant à accélerer la création et le débogue d'application
 
 * Culture
 * Automation (automatisation)
@@ -65,32 +64,52 @@ Mouvance agile visant à accélerer la création et le débogue d'application
 * Measurement (mesure)
 * Sharing (solidarité)
 
-Outils émergeant : *Docker*, *Jenkins*
+---
 
-
-=== Infras
-
-Infrastructure hétérogène::
-[cols="2",frame=none,grid=none]
+[cols="1a",frame=none,grid=none]
 |===
-|VMWare: Hyperviseur propriétaire
-|Openstack: Solution OpenSource pour du cloud computing
+|Outils émergeant::
+ _Docker_, _Jenkins_, _Ansible_, _OpenStack_
 |===
 
-*Cloud computing*::
+=== Infrastructure
+
+[cols="4",frame=none,grid=none]
+|===
+|VMWare |Openstack |Docker |OpenVZ
+|===
+
+---
+
+[cols="1a",frame=none,grid=none]
+|===
+|*Cloud computing*::
 Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur
+|===
 
-*Besoin*::
-Avoir une vue d'ensemble de l'infrastructure est primordiale: +
+---
+
+[cols="1a",frame=none,grid=none]
+|===
+|*Besoin*::
 Mettre à jour la plateforme de *supervision*
+|===
 
 == Zabbix
 
 === Présentation
 
-Ensemble d'outil assurant la supervision d'une infrastructure
+[cols="1a",frame=none,grid=none]
+|===
+|Ensemble d'outils OpenSource
+|===
 
-Le raisons de ce choix :
+---
+
+[cols="1a",frame=none,grid=none]
+|===
+|Le raisons de ce choix :
+|===
 
 * Open source et large communauté
 * Web scénario
@@ -109,21 +128,27 @@ image::./Images/Architecture_Zabbix.png[caption=" ", title="Représentation de l
 image::./Images/Processus_Alerte.png[caption=" ", title="Processus de génération d'une alerte"]
 |===
 
-=== Mise en place
+=== Supervision de container Docker
 
-* Choix optimal des triggers
-* Solutions pour superviser container *Docker*
 - image fonctionnement
 
-=== Apport + limite
+=== Conclusion sur l'installation
 
 [cols="10",frame=none,grid=none]
 |===
-2+<|Apports:
-8+<|Supervision des containers, Configuration de scénarios web.
+2+<|_Apports_:
+8+<|Supervision des containers +
+Supervision par les scénarios web.
+|===
 
-2+<|Limites:
-8+<|Manque de précision sur certaines alertes, la base de données, pas de sauvegarde
+---
+
+[cols="10",frame=none,grid=none]
+|===
+2+<|_Limites_:
+8+<|Manque de précision sur certaines alertes +
+Base de données peut devenir une limite +
+Pas de sauvegarde de la base de données.
 |===
 
 
@@ -131,28 +156,50 @@ image::./Images/Processus_Alerte.png[caption=" ", title="Processus de générati
 
 === Pourquoi en avoir besoin ?
 
-Logiciel open source permettant la configuration et la gestion à distance des machines
+[cols="1a",frame=none,grid=none]
+|===
+|Logiciel open source permettant la configuration et la gestion à distance des machines
+|===
 
-Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts
+---
 
-Utilisation indispensable pour mettre à jour les agents déjà présents
+[cols="1a",frame=none,grid=none]
+|===
+|Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts
+|===
 
-=== Apport + limite
+---
+
+[cols="1a",frame=none,grid=none]
+|===
+|Utilisation indispensable pour mettre à jour les agents déjà présents
+|===
+
+=== Conclusion de l'outil
 
 [cols="10",frame=none,grid=none]
 |===
-2+<|Apports:
-8+<|Gain de temps, Utilisation pour effectuer des montés de version de masse.
+2+<|_Apports_:
+8+<|Gain de temps +
+Effectuer des montées de version en masse.
+|===
 
-2+<|Limites:
-8+<|Fonctionnement sous Windows instable,
+---
+
+[cols="10",frame=none,grid=none]
+|===
+2+<|_Limite_:
+8+<|Fonctionnement instable sous Windows
 |===
 
 == Conclusion
 
-* Zabbix apporte un nouveau plus dans la gestion de l'infrastructure
+[cols="1a",frame=none,grid=none]
+|===
+|* Zabbix apporte un nouveau plus dans la gestion de l'infrastructure
 * Ansible aidera dans l'avenir les ingénieurs du pôlegal
 
-* Equipes innovantes et dynamiques
+|* Equipes innovantes et dynamiques
 * Apprentissage du métier d'ingénieur Réseaux et Système
 * Travailler dans la culture DevOps
+|===
