@@ -1,4 +1,4 @@
-= Evolution de la Plateforme de Supervision et Optimisation du Réseau: Mémoire de Stage de Fin d'Etudes
+= Evolution de la Plateforme de Supervision et Optimisation du Réseau
 Thibaut Fabre
 :revealjs_theme: solarized
 #:revealjs_customtheme: <file|URL>
@@ -70,14 +70,17 @@ Outils émergeant : *Docker*, *Jenkins*
 
 === Infras
 
-Infrastructure hétérogène:
+Infrastructure hétérogène::
+[cols="2",frame=none,grid=none]
+|===
+|VMWare: Hyperviseur propriétaire
+|Openstack: Solution OpenSource pour du cloud computing
+|===
 
-* VMWare: Hyperviseur propriétaire
-* Openstack: Solution OpenSource pour du cloud computing
-
-*Cloud computing* :
+*Cloud computing*::
 Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur
 
+*Besoin*::
 Avoir une vue d'ensemble de l'infrastructure est primordiale: +
 Mettre à jour la plateforme de *supervision*
 
@@ -85,7 +88,9 @@ Mettre à jour la plateforme de *supervision*
 
 === Présentation
 
-Ensemble d'outil assurant la supervision d'une infrastructure:
+Ensemble d'outil assurant la supervision d'une infrastructure
+
+Le raisons de ce choix :
 
 * Open source et large communauté
 * Web scénario
@@ -95,8 +100,14 @@ Ensemble d'outil assurant la supervision d'une infrastructure:
 
 === Architecture et fonctionnement
 
-- image architecture
-- image fonctionnement
+[cols="10",frame=none,grid=none]
+|===
+5+^.^a|[[img-sunset]]
+image::./Images/Architecture_Zabbix.png[caption=" ", title="Représentation de l'architecture"]
+
+5+^.^a|[[img-sunset]]
+image::./Images/Processus_Alerte.png[caption=" ", title="Processus de génération d'une alerte"]
+|===
 
 === Mise en place
 
@@ -106,12 +117,13 @@ Ensemble d'outil assurant la supervision d'une infrastructure:
 
 === Apport + limite
 
+[cols="10",frame=none,grid=none]
 |===
-|Apports:
-|Supervision des containers, Configuration de scénarios web.
+2+<|Apports:
+8+<|Supervision des containers, Configuration de scénarios web.
 
-|Limites:
-|Manque de précision sur certaines alertes, la base de données, pas de sauvegarde
+2+<|Limites:
+8+<|Manque de précision sur certaines alertes, la base de données, pas de sauvegarde
 |===
 
 
@@ -127,12 +139,13 @@ Utilisation indispensable pour mettre à jour les agents déjà présents
 
 === Apport + limite
 
+[cols="10",frame=none,grid=none]
 |===
-|Apports:
-|Gain de temps, Utilisation pour effectuer des montés de version de masse.
+2+<|Apports:
+8+<|Gain de temps, Utilisation pour effectuer des montés de version de masse.
 
-|Limites:
-|Fonctionnement sous Windows instable,
+2+<|Limites:
+8+<|Fonctionnement sous Windows instable,
 |===
 
 == Conclusion
