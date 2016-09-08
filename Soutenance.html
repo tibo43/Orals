@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="author" content="Thibaut Fabre"><title>Evolution de la Plateforme de Supervision et Optimisation du Réseau</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme"><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h1>Evolution de la Plateforme de Supervision et Optimisation du Réseau</h1><p><small>Thibaut Fabre</small></p></section><section id="_supervision"><h2>Supervision</h2><div class="paragraph"><p>Technique industrielle visant à :</p></div>
+<div class="ulist"><ul><li><p><strong><em>surveiller</em> le bon fonctionnement</strong> d’un système</p></li><li><p>à <strong><em>alerter</em> les éventuelles pannes</strong></p></li></ul></div>
+<div class="paragraph"><p>Principes :</p></div>
+<div class="ulist"><ul><li><p>Récupérer l&#8217;utilisation des ressources sur les environnements surveillés</p></li><li><p>Analyser chaque valeur récupérée</p></li><li><p>Alerter les responsables de l&#8217;infrastructure en cas de dysfonctionnement repéré</p><div class="ulist"><ul><li><p>Quantité de RAM libre insuffisante</p></li><li><p>Récupération d&#8217;un mot clef dans un fichier de log</p></li></ul></div></li></ul></div></section>
+<section id="_sommaire"><h2>Sommaire</h2><div class="ulist"><ul><li class="fragment"><p>Contexte</p></li><li class="fragment"><p>Zabbix</p></li><li class="fragment"><p>Ansible</p></li></ul></div></section>
+<section><section id="_contexte"><h2>Contexte</h2></section><section id="_sqli_group"><h2>SQLI Group</h2><div class="ulist"><ul><li><p>ESN française fondé en 1990</p></li><li><p>Spécialisé dans la transformation digitale</p></li><li><p>Chiffre d&#8217;affaire 2015:</p></li><li><p>Plus de 2000 collaborateurs en Europe et en Afrique du nord.</p></li></ul></div></section><section id="_isc_france"><h2>ISC France</h2><div class="ulist"><ul><li><p><em>Innovative Services Center</em></p></li><li><p>Entité situé à Bordeaux et à Nantes</p></li><li><p>plus de 200 collaborateurs à Bordeaux et 50 à Nantes</p></li></ul></div></section><section id="_pôle_crci"><h2>Pôle CRCI</h2><div class="ulist"><ul><li><p><em>Centre de Ressources et de Compétences Informatiques</em></p></li><li><p>Responsable de l’infrastructure système et réseau, de la gestion du parc informatique et fourni une assistance technique</p></li><li><p>Equipe de 3 collaborateurs:</p><div class="ulist"><ul><li><p>responsable : Arnaud Roudsovsky</p></li><li><p>2 ingénieurs : Frédéric Gracia et Romain Ballan</p></li></ul></div></li><li><p>Collaboration avec le <em>Pôle Expertise</em> pour <strong>DevOps</strong></p></li></ul></div></section><section id="_devops"><h2>DevOps</h2><div class="paragraph"><p>Mouvance agile visant à accélerer la création et le débogue d&#8217;application</p></div>
+<div class="ulist"><ul><li><p>Culture</p></li><li><p>Automation (automatisation)</p></li><li><p>Lean</p></li><li><p>Measurement (mesure)</p></li><li><p>Sharing (solidarité)</p></li></ul></div>
+<div class="paragraph"><p>Outils émergeant : <strong>Docker</strong>, <strong>Jenkins</strong></p></div></section><section id="_infras"><h2>Infras</h2><div class="dlist"><dl><dt class="hdlist1">Infrastructure hétérogène</dt></dl></div>
+<table class="tableblock frame-none grid-none" style="width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">VMWare: Hyperviseur propriétaire</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">Openstack: Solution OpenSource pour du cloud computing</p></td></tr></tbody></table>
+<div class="dlist"><dl><dt class="hdlist1"><strong>Cloud computing</strong></dt><dd><p>Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur</p></dd><dt class="hdlist1"><strong>Besoin</strong></dt><dd><p>Avoir une vue d&#8217;ensemble de l&#8217;infrastructure est primordiale:<br>
+Mettre à jour la plateforme de <strong>supervision</strong></p></dd></dl></div></section></section>
+<section><section id="_zabbix"><h2>Zabbix</h2></section><section id="_présentation"><h2>Présentation</h2><div class="paragraph"><p>Ensemble d&#8217;outil assurant la supervision d&#8217;une infrastructure</p></div>
+<div class="paragraph"><p>Le raisons de ce choix :</p></div>
+<div class="ulist"><ul><li><p>Open source et large communauté</p></li><li><p>Web scénario</p></li><li><p><em>Service Level Agreement</em></p></li><li><p>Equipe déjà formée</p></li><li><p>Possibilité de monitorer container <strong>Docker</strong></p></li></ul></div></section><section id="_architecture_et_fonctionnement"><h2>Architecture et fonctionnement</h2><table class="tableblock frame-none grid-none" style="width:100%"><colgroup><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"></colgroup><tbody><tr><td class="tableblock halign-center valign-middle" colspan="5"><div><div class="imageblock" id="img-sunset" style=""><div class="content"><img src="./Images/Architecture_Zabbix.png" alt="Architecture Zabbix"></div><div class="title"> Représentation de l&#8217;architecture</div></div></div></td><td class="tableblock halign-center valign-middle" colspan="5"><div><div class="imageblock" id="img-sunset" style=""><div class="content"><img src="./Images/Processus_Alerte.png" alt="Processus Alerte"></div><div class="title"> Processus de génération d&#8217;une alerte</div></div></div></td></tr></tbody></table></section><section id="_mise_en_place"><h2>Mise en place</h2><div class="ulist"><ul><li><p>Choix optimal des triggers</p></li><li><p>Solutions pour superviser container <strong>Docker</strong></p><div class="ulist"><ul><li><p>image fonctionnement</p></li></ul></div></li></ul></div></section><section id="_apport_limite"><h2>Apport + limite</h2><table class="tableblock frame-none grid-none" style="width:100%"><colgroup><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Apports:</p></td><td class="tableblock halign-left valign-top" colspan="8"><p class="tableblock">Supervision des containers, Configuration de scénarios web.</p></td></tr><tr><td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Limites:</p></td><td class="tableblock halign-left valign-top" colspan="8"><p class="tableblock">Manque de précision sur certaines alertes, la base de données, pas de sauvegarde</p></td></tr></tbody></table></section></section>
+<section><section id="_ansible"><h2>Ansible</h2></section><section id="_pourquoi_en_avoir_besoin"><h2>Pourquoi en avoir besoin ?</h2><div class="paragraph"><p>Logiciel open source permettant la configuration et la gestion à distance des machines</p></div>
+<div class="paragraph"><p>Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts</p></div>
+<div class="paragraph"><p>Utilisation indispensable pour mettre à jour les agents déjà présents</p></div></section><section id="_apport_limite_2"><h2>Apport + limite</h2><table class="tableblock frame-none grid-none" style="width:100%"><colgroup><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Apports:</p></td><td class="tableblock halign-left valign-top" colspan="8"><p class="tableblock">Gain de temps, Utilisation pour effectuer des montés de version de masse.</p></td></tr><tr><td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Limites:</p></td><td class="tableblock halign-left valign-top" colspan="8"><p class="tableblock">Fonctionnement sous Windows instable,</p></td></tr></tbody></table></section></section>
+<section id="_conclusion"><h2>Conclusion</h2><div class="ulist"><ul><li><p>Zabbix apporte un nouveau plus dans la gestion de l&#8217;infrastructure</p></li><li><p>Ansible aidera dans l&#8217;avenir les ingénieurs du pôlegal</p></li><li><p>Equipes innovantes et dynamiques</p></li><li><p>Apprentissage du métier d&#8217;ingénieur Réseaux et Système</p></li><li><p>Travailler dans la culture DevOps</p></li></ul></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'solarized',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
