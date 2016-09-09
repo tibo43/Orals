@@ -1,45 +1,73 @@
-= Evolution de la Plateforme de Supervision et Optimisation du Réseau
-Thibaut Fabre
+= Evolution de la Plateforme de Supervision
+Thibaut Fabre - 14/09/2016
 :revealjs_theme: league
-#:revealjs_customtheme: <file|URL>
+#:revealjs_theme: solarized
+:revealjs_transition: concave
+:revealjs_transitionSpeed: slow
 :revealjs_controls: true
 :revealjs_progress: true
 :revealjs_slideNumber: true
 :revealjs_center: true
-
+:revealjs_mouseWheel: true
+:revealjs_previewLinks: false
 
 == Supervision
 
 [cols="1a",frame=none,grid=none]
 |===
-|* *_surveiller_ le bon fonctionnement* d’un système
-* à *_alerter_ les éventuelles pannes*
+|* *_Surveiller_* une infrastructure
+* *_Alerter_* les éventuelles pannes
 
-|Principes::
-* Récupérer l'utilisation des ressources sur les environnements surveillés
+|Principe::
+* Récupérer l'utilisation des ressources sur les environnements
 * Analyser chaque valeur récupérée
-* Alerter les responsables de l'infrastructure en cas de dysfonctionnement repéré
+* Alerter  en cas de dysfonctionnements repérés
 |===
 
 == Sommaire
 
-* Contexte
-* Zabbix
-* Ansible
+[cols="1a",frame=none,grid=none]
+|===
+|1- Contexte du stage::
+Présentation de l'entreprise et de l'équipe
+
+|2- Outils de Supervision::
+*_Zabbix_* - architecture et utilisation
+
+|3- Outils de Gestion de Gonfiguration::
+*_Ansible_* - fonctionnement et apport de l'outil
+|===
 
 == Contexte
 
-=== SQLI Group
+=== SQLi Group
 
-* ESN française fondé en 1990
-* Spécialisé dans la transformation digitale
-* Chiffre d'affaire 2015:
-* Plus de 2000 collaborateurs en Europe et en Afrique du nord.
+
+[cols="1d",frame=none,grid=none]
+|===
+|ESN française fondée en 1990
+|===
+
+[cols="1d",frame=none,grid=none]
+|===
+|Spécialisée dans la transformation digitale
+|===
+
+[cols="1d",frame=none,grid=none]
+|===
+|Plus de 2000 collaborateurs dans le Monde.
+|===
+
+[cols="1",frame=none,grid=none]
+|===
+a|3 sous-entités::
+_SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
+|===
 
 === ISC France
 
-* _Innovative Services Center_
-* Entité situé à Bordeaux et à Nantes
+* _Innovative Service Center_
+* Entité située à Bordeaux et à Nantes
 * Plus de 200 collaborateurs à Bordeaux et 50 à Nantes
 
 === Pôle CRCI
@@ -50,10 +78,10 @@ Thibaut Fabre
 * Responsable de l’infrastructure système et réseau, de la gestion du parc informatique et fourni une assistance technique
 
 |Equipe de 3 collaborateurs::
-* responsable : Arnaud Roudsovsky
+* Responsable : Arnaud Roudsovsky
 * 2 ingénieurs : Frédéric Gracia et Romain Ballan
 
-^|Collaboration avec le _Pôle Expertise_ pour *DevOps*
+^|Collaboration avec le _Pôle Expertise_ pour *DevOps*.
 |===
 
 === DevOps
@@ -69,7 +97,7 @@ Thibaut Fabre
 [cols="1a",frame=none,grid=none]
 |===
 |Outils émergeant::
- _Docker_, _Jenkins_, _Ansible_, _OpenStack_
+ _Docker_, _Jenkins_, _Ansible_, _OpenStack_.
 |===
 
 === Infrastructure
@@ -84,7 +112,7 @@ Thibaut Fabre
 [cols="1a",frame=none,grid=none]
 |===
 |*Cloud computing*::
-Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur
+Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur.
 |===
 
 ---
@@ -92,7 +120,7 @@ Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la pu
 [cols="1a",frame=none,grid=none]
 |===
 |*Besoin*::
-Mettre à jour la plateforme de *supervision*
+Mettre à jour la plateforme de *Supervision*.
 |===
 
 == Zabbix
@@ -101,34 +129,33 @@ Mettre à jour la plateforme de *supervision*
 
 [cols="1a",frame=none,grid=none]
 |===
-|Ensemble d'outils OpenSource
+|Ensemble d'outils OpenSource.
 |===
 
 ---
 
 [cols="1a",frame=none,grid=none]
 |===
-|Le raisons de ce choix :
+|Les raisons de ce choix :
 |===
 
-* Open source et large communauté
-* Web scénario
+* OpenSource et large communauté
+* scénarios Web
 * _Service Level Agreement_
 * Equipe déjà formée
-* Possibilité de monitorer container *Docker*
+* Possibilité de monitorer des containers *Docker*
 
-=== Architecture et fonctionnement
+=== Architecture
 
-[cols="10",frame=none,grid=none]
-|===
-5+^.^a|[[img-sunset]]
-image::./Images/Architecture_Zabbix.png[caption=" ", title="Représentation de l'architecture"]
+[[img-sunset]]
+image::./Images/Architecture_Zabbix.png[caption="Figure 1: ", title="Représentation de l'architecture"]
 
-5+^.^a|[[img-sunset]]
-image::./Images/Processus_Alerte.png[caption=" ", title="Processus de génération d'une alerte"]
-|===
+=== Fonctionnement
 
-=== Supervision de container Docker
+[[img-sunset]]
+image::./Images/Processus_Alerte.png[caption="Figure 2: ", title="Processus de génération d'une alerte"]
+
+=== Supervision de containers Docker
 
 - image fonctionnement
 
@@ -137,7 +164,7 @@ image::./Images/Processus_Alerte.png[caption=" ", title="Processus de générati
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Apports_:
-8+<|Supervision des containers +
+8+<|Supervision des containers, +
 Supervision par les scénarios web.
 |===
 
@@ -146,8 +173,8 @@ Supervision par les scénarios web.
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Limites_:
-8+<|Manque de précision sur certaines alertes +
-Base de données peut devenir une limite +
+8+<|Manque de précisions sur certaines alertes, +
+Base de données peut devenir une limite, +
 Pas de sauvegarde de la base de données.
 |===
 
@@ -158,21 +185,22 @@ Pas de sauvegarde de la base de données.
 
 [cols="1a",frame=none,grid=none]
 |===
-|Logiciel open source permettant la configuration et la gestion à distance des machines
+|Logiciel OpenSource permettant la configuration et la gestion à distance des machines.
 |===
 
 ---
 
 [cols="1a",frame=none,grid=none]
 |===
-|Utilisation de protocole de communication (SSH et WinRM) pour exécuter des scripts
+|Utilisation de protocoles de communications: +
+SSH pour Linux et WinRM pour Windows.
 |===
 
 ---
 
 [cols="1a",frame=none,grid=none]
 |===
-|Utilisation indispensable pour mettre à jour les agents déjà présents
+|Utilisation indispensable pour mettre à jour les agents déjà présents.
 |===
 
 === Conclusion de l'outil
@@ -180,7 +208,7 @@ Pas de sauvegarde de la base de données.
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Apports_:
-8+<|Gain de temps +
+8+<|Gain de temps, +
 Effectuer des montées de version en masse.
 |===
 
@@ -189,17 +217,17 @@ Effectuer des montées de version en masse.
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Limite_:
-8+<|Fonctionnement instable sous Windows
+8+<|Fonctionnement instable sous Windows.
 |===
 
 == Conclusion
 
 [cols="1a",frame=none,grid=none]
 |===
-|* Zabbix apporte un nouveau plus dans la gestion de l'infrastructure
-* Ansible aidera dans l'avenir les ingénieurs du pôlegal
+|* Zabbix redevient utilisable dans la gestion de l'infrastructure,
+* Ansible aidera dans l'avenir les ingénieurs du pôle.
 
-|* Equipes innovantes et dynamiques
-* Apprentissage du métier d'ingénieur Réseaux et Système
-* Travailler dans la culture DevOps
+|* Apprentissage du métier d'ingénieur Réseaux et Système,
+* Equipes innovantes et dynamiques,
+* Travailler dans la culture DevOps.
 |===
