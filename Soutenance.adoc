@@ -24,6 +24,12 @@ Thibaut Fabre - 14/09/2016
 * Alerter  en cas de dysfonctionnements repérés
 |===
 
+[NOTE.speaker]
+--
+Technique industrielle
+NAGIOS, ZABBIX, CENTREON, SHINKEN
+--
+
 == Sommaire
 
 [cols="1a",frame=none,grid=none]
@@ -64,11 +70,24 @@ a|3 sous-entités::
 _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 |===
 
+[NOTE.speaker]
+--
+Entretprise de services du numérique
+1/ Conseil pour la TG
+2/ e-commerce/marketing
+3/ Pilote et mise en oeuvre de la TG
+--
+
 === ISC France
 
 * _Innovative Service Center_
-* Entité située à Bordeaux et à Nantes
+* Entitée située à Bordeaux et à Nantes
 * Plus de 200 collaborateurs à Bordeaux et 50 à Nantes
+
+[NOTE.speaker]
+--
+Sous-entité de SQLi enterprise
+--
 
 === Pôle CRCI
 
@@ -83,6 +102,11 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 
 ^|Collaboration avec le _Pôle Expertise_ pour *DevOps*.
 |===
+
+[NOTE.speaker]
+--
+Experts: garant qualité technique des projets, lien technique entre dev et crci
+--
 
 === DevOps
 
@@ -107,21 +131,31 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 |VMWare |Openstack |Docker |OpenVZ
 |===
 
----
-
 [cols="1a",frame=none,grid=none]
 |===
 |*Cloud computing*::
-Paradigme récent ayant pour but de centraliser et d’utiliser au maximum la puissance de calcul de chaque serveur.
+Utiliser au maximum la puissance de calcul des serveurs.
+|===
+
+[cols="1a",frame=none,grid=none]
+|===
+|*Containerisation*::
+Isoler un environnement des autres processus Linux.
 |===
 
 ---
 
-[cols="1a",frame=none,grid=none]
+[cols="10",frame=none,grid=none]
 |===
-|*Besoin*::
-Mettre à jour la plateforme de *Supervision*.
+2+|*Besoin:*
+8+|Mettre à jour la plateforme de *Supervision*.
 |===
+
+[NOTE.speaker]
+--
+VMWare: Hyperviseur type I propriétaire
+Openstack: ensemble d'outils Opensource permettant deploiement infra type cloud computing.
+--
 
 == Zabbix
 
@@ -139,11 +173,16 @@ Mettre à jour la plateforme de *Supervision*.
 |Les raisons de ce choix :
 |===
 
-* OpenSource et large communauté
-* scénarios Web
+* OpenSource et communauté active
+* Scénarios Web
 * _Service Level Agreement_
-* Equipe déjà formée
 * Possibilité de monitorer des containers *Docker*
+* Equipe déjà formée
+
+[NOTE.speaker]
+--
+SLA: garantie de service.
+--
 
 === Architecture
 
