@@ -15,10 +15,7 @@ Thibaut Fabre - 14/09/2016
 
 [cols="1a",frame=none,grid=none]
 |===
-|* *_Surveiller_* une infrastructure
-* *_Alerter_* les éventuelles pannes
-
-|Principe::
+|Principes::
 * Récupérer l'utilisation des ressources sur les environnements
 * Analyser chaque valeur récupérée
 * Alerter  en cas de dysfonctionnements repérés
@@ -72,7 +69,6 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 
 [NOTE.speaker]
 --
-Entretprise de services du numérique
 1/ Conseil pour la TG
 2/ e-commerce/marketing
 3/ Pilote et mise en oeuvre de la TG
@@ -86,7 +82,7 @@ Entretprise de services du numérique
 
 [NOTE.speaker]
 --
-Sous-entité de SQLi enterprise
+branche de sqli Enterprise
 --
 
 === Pôle CRCI
@@ -94,7 +90,7 @@ Sous-entité de SQLi enterprise
 [cols="1a",frame=none,grid=none]
 |===
 |* _Centre de Ressources et de Compétences Informatiques_
-* Responsable de l’infrastructure système et réseau, de la gestion du parc informatique et fourni une assistance technique
+* Responsable de l’infrastructure système et réseau et de la gestion du parc informatique.
 
 |Equipe de 3 collaborateurs::
 * Responsable : Arnaud Roudsovsky
@@ -110,19 +106,18 @@ Experts: garant qualité technique des projets, lien technique entre dev et crci
 
 === DevOps
 
+Contraction de _Development_ et _Operations_
+
 * Culture
 * Automation (automatisation)
 * Lean
 * Measurement (mesure)
 * Sharing (solidarité)
 
----
+[NOTE.speaker]
+--
 
-[cols="1a",frame=none,grid=none]
-|===
-|Outils émergeant::
- _Docker_, _Jenkins_, _Ansible_, _OpenStack_.
-|===
+--
 
 === Infrastructure
 
@@ -140,10 +135,8 @@ Utiliser au maximum la puissance de calcul des serveurs.
 [cols="1a",frame=none,grid=none]
 |===
 |*Containerisation*::
-Isoler un environnement des autres processus Linux.
+Environnement virtuel utilise les appels systèmes de l'hôte.
 |===
-
----
 
 [cols="10",frame=none,grid=none]
 |===
@@ -153,20 +146,13 @@ Isoler un environnement des autres processus Linux.
 
 [NOTE.speaker]
 --
-VMWare: Hyperviseur type I propriétaire
-Openstack: ensemble d'outils Opensource permettant deploiement infra type cloud computing.
+Openstack: ensemble d'outils Opensource permettant deploiement infra type cloud computing. |
+virtualisation classique est VM avec OS complet, container embarque un espace mem et proc propre à lui et appel système pour fonctionner.
 --
 
 == Zabbix
 
 === Présentation
-
-[cols="1a",frame=none,grid=none]
-|===
-|Ensemble d'outils OpenSource.
-|===
-
----
 
 [cols="1a",frame=none,grid=none]
 |===
@@ -203,8 +189,9 @@ image::./Images/Processus_Alerte.png[caption="Figure 2: ", title="Processus de g
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Apports_:
-8+<|Supervision des containers, +
-Supervision par les scénarios web.
+8+<|Vue centralisée des ressources utilisées, +
+Scénarios web, +
+Supervision des containers.
 |===
 
 ---
@@ -213,7 +200,7 @@ Supervision par les scénarios web.
 |===
 2+<|_Limites_:
 8+<|Manque de précisions sur certaines alertes, +
-Base de données peut devenir une limite, +
+Base de données _MySQL_, +
 Pas de sauvegarde de la base de données.
 |===
 
@@ -224,7 +211,14 @@ Pas de sauvegarde de la base de données.
 
 [cols="1a",frame=none,grid=none]
 |===
-|Logiciel OpenSource permettant la configuration et la gestion à distance des machines.
+|Mettre à jour la configuration des agents déjà présents.
+|===
+
+---
+
+[cols="1a",frame=none,grid=none]
+|===
+|Logiciel OpenSource visant à configurer et gérer un ensemble d'environnements à distance.
 |===
 
 ---
@@ -235,20 +229,13 @@ Pas de sauvegarde de la base de données.
 SSH pour Linux et WinRM pour Windows.
 |===
 
----
-
-[cols="1a",frame=none,grid=none]
-|===
-|Utilisation indispensable pour mettre à jour les agents déjà présents.
-|===
-
 === Conclusion de l'outil
 
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Apports_:
 8+<|Gain de temps, +
-Effectuer des montées de version en masse.
+Mettre à jour la version des agents.
 |===
 
 ---
@@ -264,7 +251,7 @@ Effectuer des montées de version en masse.
 [cols="1a",frame=none,grid=none]
 |===
 |* Zabbix redevient utilisable dans la gestion de l'infrastructure,
-* Ansible aidera dans l'avenir les ingénieurs du pôle.
+* Ansible va permettre de gagner du temps.
 
 |* Apprentissage du métier d'ingénieur Réseaux et Système,
 * Equipes innovantes et dynamiques,
