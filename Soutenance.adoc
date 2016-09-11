@@ -16,15 +16,18 @@ Thibaut Fabre - 14/09/2016
 [cols="1a",frame=none,grid=none]
 |===
 |Principes::
-* Récupérer l'utilisation des ressources sur les environnements
+* Récupérer des informations sur les environnements
 * Analyser chaque valeur récupérée
-* Alerter  en cas de dysfonctionnements repérés
+* Alerter  en cas de valeur non conforme
+|Objectif::
+* Historisation des valeurs
+* Anticiper les dysfonctionnement
 |===
+
 
 [NOTE.speaker]
 --
 Technique industrielle
-NAGIOS, ZABBIX, CENTREON, SHINKEN
 --
 
 == Sommaire
@@ -35,13 +38,13 @@ NAGIOS, ZABBIX, CENTREON, SHINKEN
 Présentation de l'entreprise et de l'équipe
 
 |2- Outils de Supervision::
-*_Zabbix_* - architecture et utilisation
+*_Zabbix_* - architecture et fonctionnement interne
 
 |3- Outils de Gestion de Gonfiguration::
 *_Ansible_* - fonctionnement et apport de l'outil
 |===
 
-== Contexte
+== Contexte Industriel
 
 === SQLi Group
 
@@ -76,8 +79,8 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 
 === ISC France
 
+* Branche de _SQLi Enterprise_
 * _Innovative Service Center_
-* Entitée située à Bordeaux et à Nantes
 * Plus de 200 collaborateurs à Bordeaux et 50 à Nantes
 
 [NOTE.speaker]
@@ -85,7 +88,7 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 branche de sqli Enterprise
 --
 
-=== Pôle CRCI
+=== CRCI
 
 [cols="1a",frame=none,grid=none]
 |===
@@ -96,7 +99,7 @@ branche de sqli Enterprise
 * Responsable : Arnaud Roudsovsky
 * 2 ingénieurs : Frédéric Gracia et Romain Ballan
 
-^|Collaboration avec le _Pôle Expertise_ pour *DevOps*.
+^|Collaboration avec la _cellule Expertise_ pour *DevOps*.
 |===
 
 [NOTE.speaker]
@@ -121,9 +124,9 @@ Contraction de _Development_ et _Operations_
 
 === Infrastructure
 
-[cols="4",frame=none,grid=none]
+[cols="10",frame=none,grid=none]
 |===
-|VMWare |Openstack |Docker |OpenVZ
+3+|VMWare ESXi 3+|Openstack 2+|Docker 2+|OpenVZ
 |===
 
 [cols="1a",frame=none,grid=none]
@@ -180,16 +183,13 @@ image::./Images/Architecture_Zabbix.png[caption="Figure 1: ", title="Représenta
 [[img-sunset]]
 image::./Images/Processus_Alerte.png[caption="Figure 2: ", title="Processus de génération d'une alerte"]
 
-=== Supervision de containers Docker
-
-- image fonctionnement
-
 === Conclusion sur l'installation
 
 [cols="10",frame=none,grid=none]
 |===
-2+<|_Apports_:
-8+<|Vue centralisée des ressources utilisées, +
+2+|_Apports_:
+8+|Vue centralisée des ressources utilisées, +
+Alertes précises pour anticiper les pannes, +
 Scénarios web, +
 Supervision des containers.
 |===
@@ -198,8 +198,8 @@ Supervision des containers.
 
 [cols="10",frame=none,grid=none]
 |===
-2+<|_Limites_:
-8+<|Manque de précisions sur certaines alertes, +
+2+|_Limites_:
+8+|Manque de précisions sur certaines alertes, +
 Base de données _MySQL_, +
 Pas de sauvegarde de la base de données.
 |===
@@ -216,17 +216,16 @@ Pas de sauvegarde de la base de données.
 
 ---
 
-[cols="1a",frame=none,grid=none]
-|===
-|Logiciel OpenSource visant à configurer et gérer un ensemble d'environnements à distance.
-|===
+* OpenSource et gratuit,
+* "Agentless",
+* Linux et Windows.
 
 ---
 
 [cols="1a",frame=none,grid=none]
 |===
-|Utilisation de protocoles de communications: +
-SSH pour Linux et WinRM pour Windows.
+|Objectif::
+Centraliser des actions pour la gestion des configuration.
 |===
 
 === Conclusion de l'outil
