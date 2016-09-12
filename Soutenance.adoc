@@ -56,12 +56,12 @@ Présentation de l'entreprise et de l'équipe
 
 [cols="1d",frame=none,grid=none]
 |===
-|Spécialisée dans la transformation digitale
+|Plus de 2000 collaborateurs dans le Monde.
 |===
 
 [cols="1d",frame=none,grid=none]
 |===
-|Plus de 2000 collaborateurs dans le Monde.
+|Spécialisée dans la transformation digitale
 |===
 
 [cols="1",frame=none,grid=none]
@@ -79,9 +79,20 @@ _SQLi Consulting_, _WAX Interactive_, _SQLi Enterprise_
 
 === ISC France
 
-* Branche de _SQLi Enterprise_
-* _Innovative Service Center_
-* Plus de 200 collaborateurs à Bordeaux et 50 à Nantes
+[cols="1",frame=none,grid=none]
+|===
+|Branche de _SQLi Enterprise_
+|===
+
+[cols="1",frame=none,grid=none]
+|===
+|_Innovative Service Center_
+|===
+
+[cols="1",frame=none,grid=none]
+|===
+|Plus de 250 collaborateurs répartis à Bordeaux et à Nantes
+|===
 
 [NOTE.speaker]
 --
@@ -93,7 +104,8 @@ branche de sqli Enterprise
 [cols="1a",frame=none,grid=none]
 |===
 |* _Centre de Ressources et de Compétences Informatiques_
-* Responsable de l’infrastructure système et réseau et de la gestion du parc informatique.
+* Responsable de l’infrastructure système et réseau +
+et de la gestion du parc informatique.
 
 |Equipe de 3 collaborateurs::
 * Responsable : Arnaud Roudsovsky
@@ -138,7 +150,7 @@ Utiliser au maximum la puissance de calcul des serveurs.
 [cols="1a",frame=none,grid=none]
 |===
 |*Containerisation*::
-Environnement virtuel utilise les appels systèmes de l'hôte.
+Environnements virtuels utilise les appels systèmes de l'hôte.
 |===
 
 [cols="10",frame=none,grid=none]
@@ -200,8 +212,7 @@ Supervision des containers.
 |===
 2+|_Limites_:
 8+|Manque de précisions sur certaines alertes, +
-Base de données _MySQL_, +
-Pas de sauvegarde de la base de données.
+Base de données _MySQL_.
 |===
 
 
@@ -211,23 +222,23 @@ Pas de sauvegarde de la base de données.
 
 [cols="1a",frame=none,grid=none]
 |===
-|Mettre à jour la configuration des agents déjà présents.
+|Besoin::
+Mettre à jour la configuration des agents déjà présents.
 |===
-
----
-
-* OpenSource et gratuit,
-* "Agentless",
-* Linux et Windows.
 
 ---
 
 [cols="1a",frame=none,grid=none]
 |===
-|Objectif::
-Centraliser des actions pour la gestion des configuration.
+|Centraliser des actions pour la gestion des configuration.
 |===
 
+---
+
+[cols="7"",frame=none,grid=none]
+|===
+1+|*Ansible*: 2+|OpenSource 2+|"Agentless" 2+|Linux et Windows
+|===
 === Conclusion de l'outil
 
 [cols="10",frame=none,grid=none]
@@ -250,7 +261,7 @@ Mettre à jour la version des agents.
 [cols="1a",frame=none,grid=none]
 |===
 |* Zabbix redevient utilisable dans la gestion de l'infrastructure,
-* Ansible va permettre de gagner du temps.
+* Ansible va permettre de gagner du temps dans la gestion des configurations.
 
 |* Apprentissage du métier d'ingénieur Réseaux et Système,
 * Equipes innovantes et dynamiques,
