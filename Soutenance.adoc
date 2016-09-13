@@ -1,7 +1,6 @@
 = Evolution de la Plateforme de Supervision
 Thibaut Fabre - 14/09/2016
 :revealjs_theme: league
-#:revealjs_theme: solarized
 :revealjs_transition: concave
 :revealjs_transitionSpeed: slow
 :revealjs_controls: true
@@ -10,6 +9,7 @@ Thibaut Fabre - 14/09/2016
 :revealjs_center: true
 :revealjs_mouseWheel: true
 :revealjs_previewLinks: false
+:revealjs_loop: true
 
 == Supervision
 
@@ -34,13 +34,13 @@ Technique industrielle
 
 [cols="1a",frame=none,grid=none]
 |===
-|1- Contexte du stage::
+|1- Contexte Industriel::
 Présentation de l'entreprise et de l'équipe
 
-|2- Outils de Supervision::
-*_Zabbix_* - architecture et fonctionnement interne
+|2- Plateforme de Supervision::
+*_Zabbix_* - Architecture et fonctionnement interne
 
-|3- Outils de Gestion de Gonfiguration::
+|3- Outils de Gestion de Configuration::
 *_Ansible_* - Raisons et apports de l'outil
 |===
 
@@ -163,7 +163,7 @@ Openstack: ensemble d'outils Opensource permettant deploiement infra type cloud 
 virtualisation classique est VM avec OS complet, container embarque un espace mem et proc propre à lui et appel système pour fonctionner.
 --
 
-== Zabbix
+== Plateforme de Supervision : Zabbix
 
 === Présentation
 
@@ -211,7 +211,7 @@ Base de données _MySQL_.
 |===
 
 
-== Ansible
+== Outils de Gestion de Configuration : Ansible
 
 === Pourquoi en avoir besoin ?
 
@@ -234,6 +234,7 @@ Mettre à jour la configuration des agents déjà présents.
 |===
 1+|*Ansible*: 2+|OpenSource 2+|"Agentless" 2+|Linux et Windows
 |===
+
 === Conclusion de l'outil
 
 [cols="10",frame=none,grid=none]
