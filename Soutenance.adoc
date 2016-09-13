@@ -21,7 +21,7 @@ Thibaut Fabre - 14/09/2016
 * Alerter  en cas de valeur non conforme
 |Objectif::
 * Historisation des valeurs
-* Anticiper les dysfonctionnement
+* Anticiper les dysfonctionnements
 |===
 
 
@@ -41,7 +41,7 @@ Présentation de l'entreprise et de l'équipe
 *_Zabbix_* - architecture et fonctionnement interne
 
 |3- Outils de Gestion de Gonfiguration::
-*_Ansible_* - fonctionnement et apport de l'outil
+*_Ansible_* - Raisons et apports de l'outil
 |===
 
 == Contexte Industriel
@@ -123,16 +123,14 @@ Experts: garant qualité technique des projets, lien technique entre dev et crci
 
 Contraction de _Development_ et _Operations_
 
+---
+
 * Culture
 * Automation (automatisation)
 * Lean
 * Measurement (mesure)
 * Sharing (solidarité)
 
-[NOTE.speaker]
---
-
---
 
 === Infrastructure
 
@@ -171,14 +169,12 @@ virtualisation classique est VM avec OS complet, container embarque un espace me
 
 [cols="1a",frame=none,grid=none]
 |===
-|Les raisons de ce choix :
-|===
-
-* OpenSource et communauté active
+|* OpenSource et communauté active
 * Scénarios Web
 * _Service Level Agreement_
 * Possibilité de monitorer des containers *Docker*
 * Equipe déjà formée
+|===
 
 [NOTE.speaker]
 --
@@ -202,7 +198,6 @@ image::./Images/Processus_Alerte.png[caption="Figure 2: ", title="Processus de g
 2+|_Apports_:
 8+|Vue centralisée des ressources utilisées, +
 Alertes précises pour anticiper les pannes, +
-Scénarios web, +
 Supervision des containers.
 |===
 
@@ -253,15 +248,15 @@ Mettre à jour la version des agents.
 [cols="10",frame=none,grid=none]
 |===
 2+<|_Limite_:
-8+<|Fonctionnement instable sous Windows.
+8+<|Fonctionnement instable avec environnements distant Windows.
 |===
 
 == Conclusion
 
 [cols="1a",frame=none,grid=none]
 |===
-|* Zabbix redevient utilisable dans la gestion de l'infrastructure,
-* Ansible va permettre de gagner du temps dans la gestion des configurations.
+|* Zabbix redevient une plateforme utile,
+* Ansible permet un gain de temps dans la gestion de l'infrastructure.
 
 |* Apprentissage du métier d'ingénieur Réseaux et Système,
 * Equipes innovantes et dynamiques,
