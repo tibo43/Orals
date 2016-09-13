@@ -184,12 +184,12 @@ SLA: garantie de service.
 === Architecture
 
 [[img-sunset]]
-image::./Images/Architecture_Zabbix.png[caption="Figure 1: ", title="Représentation de l'architecture"]
+image::./Images/Architecture_Zabbix.png[]
 
 === Fonctionnement
 
 [[img-sunset]]
-image::./Images/Processus_Alerte.png[caption="Figure 2: ", title="Processus de génération d'une alerte"]
+image::./Images/Processus_Alerte.png[]
 
 === Conclusion sur l'installation
 
